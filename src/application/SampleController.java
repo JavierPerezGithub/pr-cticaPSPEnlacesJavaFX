@@ -1,5 +1,7 @@
 package application;
-
+/**
+ * @author Javier Pérez Jaurena
+ */
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileInputStream;

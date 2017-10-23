@@ -1,5 +1,7 @@
 package application;
-
+/**
+ * @author Javier Pérez Jaurena
+ */
 import java.util.ArrayList;
 import javafx.application.Application;
 import javafx.stage.Stage;
