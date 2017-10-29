@@ -1,62 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 
-<AnchorPane prefHeight="377.0" prefWidth="546.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="377.0" prefWidth="546.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController">
    <children>
-      <ImageView fitHeight="377.0" fitWidth="546.0" layoutY="-1.0" pickOnBounds="true">
+      <ImageView fitHeight="377.0" fitWidth="546.0" pickOnBounds="true">
          <image>
-            <Image url="@imagenes/rojo-blanco.jpg" />
+            <Image url="@imagenes/fondo.jpeg" />
          </image>
       </ImageView>
       <TextField fx:id="txtFDatos" layoutX="80.0" layoutY="160.0" prefHeight="33.0" prefWidth="355.0" text="www." />
-      <TextArea fx:id="edArea" editable="false" layoutX="80.0" layoutY="213.0" onMouseClicked="#entroDirecto" prefHeight="128.0" prefWidth="355.0" />
-      <JFXButton fx:id="btnExcel" ellipsisString="" layoutX="376.0" layoutY="58.0" onAction="#entroExcel" prefHeight="55.0" prefWidth="0.0">
-         <graphic>
-            <ImageView fitHeight="55.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+      <TextArea fx:id="edArea" editable="false" layoutX="80.0" layoutY="213.0" onMouseClicked="#entroDirecto" prefHeight="128.0" prefWidth="355.0">
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor></TextArea>
+      <HBox layoutX="185.0" layoutY="75.0" spacing="90.0">
+         <children>
+            <ImageView accessibleRole="BUTTON" fitHeight="55.0" fitWidth="50.0" onMouseClicked="#entroPowerPoint" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@imagenes/e.jpg" />
+                  <Image url="@imagenes/p.png" />
                </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </ImageView>
-         </graphic>
-      </JFXButton>
-      <JFXButton layoutX="300.0" layoutY="58.0" onAction="#entroWord" prefHeight="55.0" prefWidth="0.0" text=" ">
-         <graphic>
-            <ImageView fx:id="btnWord" fitHeight="55.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="btnWord" accessibleRole="BUTTON" fitHeight="55.0" fitWidth="50.0" onMouseClicked="#entroWord" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@imagenes/w.jpg" />
+                  <Image url="@imagenes/Word.png" />
                </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </ImageView>
-         </graphic>
-      </JFXButton>
-      <JFXButton fx:id="btnPowerPoint" ellipsisString="" layoutX="450.0" layoutY="58.0" onAction="#entroPowerPoint" prefHeight="55.0" prefWidth="0.0">
-         <graphic>
-            <ImageView fitHeight="55.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView accessibleRole="BUTTON" fitHeight="55.0" fitWidth="50.0" onMouseClicked="#entroExcel" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@imagenes/pp.jpg" />
+                  <Image url="@imagenes/descarga.png" />
                </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </ImageView>
-         </graphic>
-      </JFXButton>
-      <JFXButton fx:id="btnNavegar" layoutX="450.0" layoutY="144.0" onAction="#entroNavego" prefHeight="66.0" prefWidth="0.0" text=" ">
-         <graphic>
-            <ImageView fitHeight="58.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@imagenes/icono_internet.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </JFXButton>
-      <JFXButton fx:id="btnUniversidad" layoutX="14.0" layoutY="18.0" onAction="#entroUni" prefHeight="66.0" prefWidth="96.0" text=" " />
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="-8.0" layoutY="-13.0" pickOnBounds="true" preserveRatio="true">
+         </children>
+      </HBox>
+      <ImageView accessibleRole="BUTTON" fitHeight="50.0" fitWidth="98.0" layoutX="462.0" layoutY="152.0" onMouseClicked="#entroNavego" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@imagenes/madrid.jpg" />
+            <Image url="@imagenes/globo.png" />
          </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fitHeight="84.0" fitWidth="87.0" layoutX="448.0" layoutY="293.0" onMouseClicked="#salgoPrograma" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/salir.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </ImageView>
    </children>
 </AnchorPane>

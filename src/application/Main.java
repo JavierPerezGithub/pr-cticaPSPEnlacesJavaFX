@@ -5,6 +5,7 @@ package application;
 import java.util.ArrayList;
 import javafx.application.Application;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.fxml.FXMLLoader;
@@ -22,7 +23,8 @@ public class Main extends Application {
 			root = (AnchorPane) loader.load();
 			Scene scene = new Scene(root);
 			primaryStage.setScene(scene);
-			primaryStage.setTitle("Proyecto PSP Javier Pérez");
+			primaryStage.setResizable(false);
+			primaryStage.initStyle(StageStyle.UNDECORATED);
 			primaryStage.show();
 			SampleController sam = loader.getController();
 			sam.inicializarTabla(this);

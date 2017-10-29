@@ -4,6 +4,7 @@ package application;
  */
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -14,10 +15,13 @@ import java.util.ArrayList;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 public class SampleController {
 
@@ -32,6 +36,7 @@ public class SampleController {
 	FileInputStream fis = null;
 	BufferedReader br = null;
 	static int cont = 0;
+	Stage st;
 
 	@FXML
 	private TextField txtFDatos;
@@ -40,35 +45,13 @@ public class SampleController {
 	private TextArea edArea;
 
 	@FXML
-	private JFXButton btnExcel;
-
-	@FXML
 	private ImageView btnWord;
 
 	@FXML
-	private JFXButton btnPowerPoint;
-
-	@FXML
-	private JFXButton btnNavegar;
-
-	@FXML
-	private JFXButton btnUniversidad;
-
-	@FXML
-	void entroExcel(ActionEvent event) {
-		edArea.setAccessibleText("Entro en Excel");
-		pb = new ProcessBuilder("C:\\Program Files\\Microsoft Office\\Office15\\EXCEL.EXE");
+	void entroExcel(MouseEvent event) {
+		
 		try {
-			excel = pb.start();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-
-	@FXML
-	void entroUni(ActionEvent event) {
-		try {
-			r.exec("rundll32 url.dll, FileProtocolHandler " + "http://universidadeuropea.es/");
+			Runtime.getRuntime().exec("rundll32 url.dll, FileProtocolHandler " + "EXCEL");
 
 		} catch (IOException e) {
 			edArea.setText("Dirección incorrecta");
@@ -76,10 +59,11 @@ public class SampleController {
 	}
 
 	@FXML
-	void entroNavego(ActionEvent event) {
+	void entroNavego(MouseEvent event) {
 
 		try {
-			r.exec("rundll32 url.dll, FileProtocolHandler " + txtFDatos.getText().trim());
+			Runtime.getRuntime().exec("rundll32 url.dll, FileProtocolHandler " + txtFDatos.getText().trim());
+		
 
 		} catch (IOException e) {
 			edArea.setText("Dirección incorrecta");
@@ -103,7 +87,7 @@ public class SampleController {
 		if (!edArea.getSelectedText().isEmpty()) {
 
 			try {
-				r.exec("rundll32 url.dll, FileProtocolHandler " + edArea.getSelectedText());
+				Runtime.getRuntime().exec("rundll32 url.dll, FileProtocolHandler " + edArea.getSelectedText());
 			} catch (IOException e) {
 
 				e.printStackTrace();
@@ -127,7 +111,7 @@ public class SampleController {
 			br.close();
 		} catch (FileNotFoundException e) {
 
-			e.printStackTrace();
+			File archivo = new File("fichero.txt");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -148,28 +132,33 @@ public class SampleController {
 	}
 
 	@FXML
-	void entroPowerPoint(ActionEvent event) {
-		pb = new ProcessBuilder("C:\\Program Files\\Microsoft Office\\Office15\\POWERPNT.EXE");
+	void entroPowerPoint(MouseEvent event) {
 		try {
-			powerPoint = pb.start();
+			Runtime.getRuntime().exec("rundll32 url.dll, FileProtocolHandler " + "powerpnt");
+
 		} catch (IOException e) {
-			e.printStackTrace();
+			edArea.setText("Dirección incorrecta");
 		}
 	}
 
 	@FXML
-	void entroWord(ActionEvent event) {
-		pb = new ProcessBuilder("C:\\Program Files\\Microsoft Office\\Office15\\WINWORD.EXE");
+	void entroWord(MouseEvent event) {
 		try {
-			word = pb.start();
+			Runtime.getRuntime().exec("rundll32 url.dll, FileProtocolHandler " + "WINWORD");
 
 		} catch (IOException e) {
-			e.printStackTrace();
+			edArea.setText("Dirección incorrecta");
 		}
 	}
 
 	public void inicializarTabla(Main main) {
 
 		leoFichero();
+	}
+	
+	@FXML
+	void salgoPrograma(MouseEvent event) {
+		
+		System.exit(0);
 	}
 }
