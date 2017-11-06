@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="377.0" prefWidth="546.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController">
+   <children>
+      <ImageView fitHeight="377.0" fitWidth="546.0" pickOnBounds="true">
+         <image>
+            <Image url="@imagenes/fondo.jpeg" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtFDatos" layoutX="80.0" layoutY="160.0" prefHeight="33.0" prefWidth="355.0" text="www." />
+      <TextArea fx:id="edArea" editable="false" layoutX="80.0" layoutY="213.0" onMouseClicked="#entroDirecto" prefHeight="128.0" prefWidth="355.0">
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor></TextArea>
+      <HBox layoutX="185.0" layoutY="75.0" spacing="90.0">
+         <children>
+            <ImageView accessibleRole="BUTTON" fitHeight="55.0" fitWidth="50.0" onMouseClicked="#entroPowerPoint" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagenes/p.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="btnWord" accessibleRole="BUTTON" fitHeight="55.0" fitWidth="50.0" onMouseClicked="#entroWord" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagenes/Word.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView accessibleRole="BUTTON" fitHeight="55.0" fitWidth="50.0" onMouseClicked="#entroExcel" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagenes/descarga.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </HBox>
+      <ImageView accessibleRole="BUTTON" fitHeight="50.0" fitWidth="98.0" layoutX="462.0" layoutY="152.0" onMouseClicked="#entroNavego" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/globo.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fitHeight="84.0" fitWidth="87.0" layoutX="448.0" layoutY="293.0" onMouseClicked="#salgoPrograma" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/salir.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+   </children>
+</AnchorPane>
