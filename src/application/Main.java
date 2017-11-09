@@ -26,8 +26,8 @@ public class Main extends Application {
 			primaryStage.setResizable(false);
 			primaryStage.initStyle(StageStyle.UNDECORATED);
 			primaryStage.show();
-			SampleController sam = loader.getController();
-			sam.inicializarTabla(this);
+			/*SampleController sam = loader.getController();
+			sam.inicializarTabla(this);*/
 
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -11,11 +11,15 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
+
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -23,7 +27,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-public class SampleController {
+public class SampleController implements Initializable{
 
 	Runtime r = Runtime.getRuntime();
 	Process excel = null;
@@ -150,15 +154,21 @@ public class SampleController {
 			edArea.setText("Dirección incorrecta");
 		}
 	}
-
+	/*
 	public void inicializarTabla(Main main) {
 
 		leoFichero();
 	}
-	
+	*/
 	@FXML
 	void salgoPrograma(MouseEvent event) {
 		
 		System.exit(0);
+	}
+//Este metodo implementado es la bomba. Arranca antes de la app y sirve para que cargue el fichero antes de abrir el programa
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		
+		leoFichero();
 	}
 }
